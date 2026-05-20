@@ -1,1 +1,52 @@
-<p>navbar works!</p>
+@if (responsive.isMobile()){
+    <nav class="dark-background">
+        <div>
+            <h2 class="logo">Bits&Bites</h2>
+        </div>
+        <div></div>
+        <div>
+            <button
+                (click)="toggleMenu()"
+                class="hamburger-menu"
+            >
+                <mat-icon>{{ isMenuOpen() ? 'close' : 'menu' }}</mat-icon>
+            </button>
+        </div>
+        @if (isMenuOpen()) {
+            <div class="mobile-menu">
+                <ul class="navbar-links-mobile">
+                    <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+                    <li><a routerLink="/description" routerLinkActive="active">Description</a></li>
+                    <li><a routerLink="/ingredients" routerLinkActive="active">Ingredients</a></li>
+                    <li><a routerLink="/recipe" routerLinkActive="active">Recipe</a></li>
+                    <li><a routerLink="/comments" routerLinkActive="active">Comments</a></li>  
+                    <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+                    <li><a routerLink="/join" routerLinkActive="active">Join Us</a></li>
+                </ul>
+            </div>
+        }
+    </nav>
+
+} @else {
+    <nav class="dark-background">
+        <div>
+            <h1 class="logo">Bits&Bites</h1>
+        </div>
+        <div>
+            <ul class="navbar-links-desktop">
+                <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="/recipe" routerLinkActive="active">Recipe</a></li>
+                <li><a routerLink="/preparation" routerLinkActive="active">Preparation</a></li>
+                <li><a routerLink="/community" routerLinkActive="active">Community</a></li>
+                <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <a routerLink="/join">
+                <p class="join-us">
+                    Join Us
+                </p>
+            </a>
+        </div>
+    </nav>
+}

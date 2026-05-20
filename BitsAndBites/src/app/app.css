@@ -1,0 +1,33 @@
+:host {
+    display: block;
+    height: 100vh;
+    /* Sin flex aquí, el navbar es fixed y no necesita espacio */
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+}
+
+.scroll-container {
+    flex: 1;              /* Ocupa exactamente lo que sobra tras el navbar */
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;                /* Chrome/Safari */
+}
+
+.snap-section {
+    height: 100%;  
+    scroll-snap-align: start;
+    padding-top: var(--navbar-height); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

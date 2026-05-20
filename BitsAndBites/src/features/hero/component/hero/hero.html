@@ -1,0 +1,28 @@
+@if (responsive.isMobile()){
+    <div class="dark-background hero-container">
+        <div class="hero-content">
+            <p class="p-figma">High-altitude gastronomy</p>
+            <hr class="hr-titulo">
+            <h1 class="title">Cremas de Pejibaye</h1>
+        </div>
+        <img class="leaf-left" src="assets/verticalLeaf.png" alt="">
+        <img class="leaf-left" src="assets/horizontalLeafs.png" alt="">
+        <img class="leaf-right" src="assets/verticalLeaf.png" alt="">
+        <img class="leaf-right" src="assets/horizontalLeafs.png" alt="">
+    </div>
+} @else {
+    <div class="dark-background hero-desktop">
+        <div class="hero-left">
+            <img class="leaf-top-left" src="assets/verticalLeaf.png" alt="">
+            <div class="hero-content">
+                <p class="p-figma">High-altitude gastronomy</p>
+                <hr class="hr-titulo">
+                <h1 class="title">Cremas de Pejibaye</h1>
+            </div>
+            <img class="leaf-left" src="assets/horizontalLeafs.png" alt="">
+        </div>
+        <div class="hero-right">
+            <img class="hero-photo" src="assets/RompopeVaso.png" alt="Crema de Pejibaye">
+        </div>
+    </div>
+}

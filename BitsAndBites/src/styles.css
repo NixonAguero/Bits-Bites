@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    /*Colors*/
+    --primary-color: #593712;
+    --bright-primary-color: #BD8A53;
+    --secondary-color: #F7EADA;
+    --text-color: #333333;
+    --extra1: #E4D0B7;
+    --extra2: #C0B393;
+    --extra3: #C6B79A;
+    --extra4: #F2EDDA;
+
+    --navbar-height: 60px;
+
+    /*Typography*/
+    --logo: "HeadlandOne";
+    --h1: "Hahmlet";
+    --h2: "Hahmlet";
+    --h3: "Hahmlet";
+    --fimga-p: "Habibi", "Helvetica Neue", sans-serif;
+
+}
+
+html, body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+.dark-background {
+    background-color: var(--primary-color);
+}
+
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.separator {
+    margin-top: 25px;
+    width: 95%;
+    border: none;
+    height: 2px;
+    background-color: var(--bright-primary-color);
+}

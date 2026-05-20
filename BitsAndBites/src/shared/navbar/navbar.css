@@ -1,0 +1,159 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    box-sizing: border-box;
+}
+
+nav > div {
+    display: flex;
+    align-items: center;
+}
+
+nav > div:nth-child(1) {
+    justify-content: flex-start;
+    z-index: 2;
+}
+
+/* Corregido: Evitamos que este contenedor bloquee los clicks de los lados */
+nav > div:nth-child(2) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    z-index: 1;
+    pointer-events: none; /* Deja pasar los clicks a través de las zonas vacías */
+}
+
+/* Activamos los clicks únicamente dentro de la lista real de enlaces */
+.navbar-links-desktop {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    pointer-events: auto; 
+}
+
+nav > div:nth-child(3) {
+    justify-content: flex-end;
+    z-index: 2;
+}
+
+.logo {
+    color: var(--secondary-color);
+    font-size: 50px;
+    font-family: var(--logo);
+    margin: 20px;
+    white-space: nowrap;
+}
+
+/* --- ESTILOS BASE DE ENLACES --- */
+.navbar-links-desktop a,
+.navbar-links-mobile a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 18px;
+    font-family: var(--h3);
+    position: relative;
+    transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar-links-mobile a {
+    font-size: 22px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* --- HOVER (Corregido aumentando la especificidad) --- */
+.navbar-links-desktop a:hover,
+.navbar-links-mobile a:hover {
+    opacity: 0.8;
+    color: var(--extra2) !important; /* El !important asegura romper la herencia base */
+}
+
+/* --- ACTIVE (Corregido aumentando la especificidad) --- */
+.navbar-links-desktop a.active,
+.navbar-links-mobile a.active {
+    font-weight: bold; 
+    opacity: 1;      
+    color: var(--bright-primary-color) !important;  
+}
+
+/* Línea decorativa opcional para el elemento activo en desktop */
+.navbar-links-desktop a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--bright-primary-color);
+}
+
+/* --- BOTONES Y MENÚS --- */
+.join-us {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.join-us:hover {
+    filter: brightness(1.1);
+    transform: scale(1.03); 
+}
+
+.join-us:active {
+    transform: scale(0.98); 
+}
+
+.hamburger-menu {
+    background-color: transparent;
+    border: none;
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.mobile-menu {
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    background-color: var(--primary-color);
+    border-radius: 0px 0px 20px 20px;
+    padding: 20px;
+}
+
+.navbar-links-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    font-family: var(--h3);
+    margin: 0;
+    padding: 0;
+}
+
+.join-button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
