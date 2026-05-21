@@ -1,0 +1,26 @@
+<section class="comments" aria-label="Recipe comments">
+  <h2 class="comments-title">Comments</h2>
+
+  <div class="comments-list">
+    @for (comment of comments(); track comment.user + comment.text) {
+      <article class="comment-card">
+        <p class="comment-user">{{ comment.user }}</p>
+        <p class="comment-text">{{ comment.text }}</p>
+      </article>
+    }
+  </div>
+
+  <form class="comment-form" (submit)="$event.preventDefault(); addComment()">
+    <input
+      class="comment-input"
+      type="text"
+      name="message"
+      placeholder="Enter a message"
+      [value]="message()"
+      (input)="updateMessage($event)"
+    />
+    <button class="send-icon" type="submit" aria-label="Send comment">
+      <mat-icon>send</mat-icon>
+    </button>
+  </form>
+</section>

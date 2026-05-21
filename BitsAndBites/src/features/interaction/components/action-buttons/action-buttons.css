@@ -1,0 +1,45 @@
+:host {
+  display: block;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: clamp(26px, 8vw, 96px);
+}
+
+.action-button {
+  min-width: 116px;
+  height: 52px;
+  border: 0;
+  border-radius: 7px;
+  background-color: var(--extra2);
+  color: var(--primary-color);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--h1);
+  font-size: clamp(1.55rem, 2.5vw, 2rem);
+  line-height: 1;
+  padding: 0 16px;
+}
+
+.action-button strong {
+  font-family: var(--fimga-p);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .actions {
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .action-button {
+    min-width: 134px;
+    height: 54px;
+    font-size: 2rem;
+  }
+}

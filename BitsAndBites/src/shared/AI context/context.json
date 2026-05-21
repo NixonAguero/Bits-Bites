@@ -1,0 +1,97 @@
+{
+  "proyecto": {
+    "nombre": "Bits & Bites: Gastronomía de Altura",
+    "curso": "Multimedios (Ciclo I, 2026)",
+    "estudiante": "Nixon Agüero Elizondo (C30087)",
+    "profesor": "Marco Guevara",
+    "institucion": "Universidad de Costa Rica, Sede del Atlántico (Turrialba)"
+  },
+  "contexto_marca": {
+    "descripcion": "Una propuesta culinaria e informativa innovadora enfocada en la gastronomía de altura de la zona de Turrialba, buscando conectar la tradición local con la aventura, la frescura y la calidad.",
+    "mision": "Promover y preservar la identidad gastronómica de altura de Turrialba a través de una plataforma digital interactiva, facilitando el acceso a recetas tradicionales, historias locales y la visibilización de productores de la zona.",
+    "vision": "Convertirse en el referente digital de la gastronomía de Turrialba, reconocido por su innovación en el diseño multimedia y su impacto en el posicionamiento del turismo culinario sostenible para el año 2028.",
+    "valores": [
+      "Autenticidad",
+      "Sostenibilidad",
+      "Innovación tecnológica",
+      "Comunidad",
+      "Calidad"
+    ],
+    "objetivos_organizacion": [
+      "Posicionar la colaboración como propuesta innovadora.",
+      "Atraer un público más joven e interesado en la gastronomía local.",
+      "Generar una base de datos de usuarios (leads).",
+      "Promocionar productos locales y establecer bases para monetización.",
+      "Crear comunidad y facilitar el acceso a la información gastronómica."
+    ]
+  },
+  "identidad_visual": {
+    "concepto_moodboard": "Busca transmitir una experiencia gastronómica inmersiva y auténtica en Turrialba.",
+    "atmosfera": {
+      "descubrir": "Estimular la curiosidad por explorar nuevos sabores mediante cocinas tradicionales y recetas únicas.",
+      "conexion_tierra": "Uso de tonos tierra, texturas rústicas y vegetación exuberante.",
+      "valoracion_tradicion": "Celebración de la herencia culinaria local mediante tipografías de estilo antiguo y utensilios tradicionales.",
+      "inspiracion_aventura": "Evocación del espíritu aventurero con la figura de Don Pepe y cabañas en la selva."
+    },
+    "elementos_clave": {
+      "pejibaye": "Símbolo central de la gastronomía local de altura y base fundamental del proyecto (utilizado en la crema de pejibaye).",
+      "trigo": "Símbolo universal de agricultura, abundancia y conexión con la tierra cultivada que añade tradición y calidez."
+    }
+  },
+  "receta_principal": {
+    "nombre": "Crema de Pejibaye (Licor Artesanal)",
+    "origen": "Turrialba, Costa Rica",
+    "descripcion": "Bebida cremosa, dulce y con un toque especiado, ideal para celebraciones que equilibra la calidez del ron con la textura frutal.",
+    "ingredientes": [
+      {
+        "nombre": "Pejibaye",
+        "cantidad": "500g",
+        "descripcion": "Fruta tropical costarricense, altamente nutritiva y harinosa, base de la crema. Crece en racimos grandes en palmeras espinosas."
+      },
+      {
+        "nombre": "Leche condensada",
+        "cantidad": "1 lata (397g)",
+        "descripcion": "Aporta dulzura y cremosidad a la bebida. Su textura espesa ayuda a ligar los demás ingredientes."
+      },
+      {
+        "nombre": "Crema de leche (Heavy cream)",
+        "cantidad": "250ml",
+        "descripcion": "Da textura espesa, rica, suave y aterciopelada al licor, balanceando el alcohol."
+      },
+      {
+        "nombre": "Ron blanco",
+        "cantidad": "200ml",
+        "descripcion": "Base alcohólica que equilibra los sabores, aportando calidez y profundidad sin opacar la fruta."
+      },
+      {
+        "nombre": "Canela",
+        "cantidad": "1 rama",
+        "descripcion": "Toque especiado y aromático que realza el sabor, típico de los postres latinoamericanos."
+      },
+      {
+        "nombre": "Vainilla",
+        "cantidad": "1 cucharadita (tsp)",
+        "descripcion": "Aroma dulce que complementa la mezcla, redondeando los sabores con un trasfondo floral."
+      },
+      {
+        "nombre": "Azúcar",
+        "cantidad": "100g",
+        "descripcion": "Endulza y balancea la acidez natural, realzando el perfil de sabor general."
+      }
+    ]
+  },
+  "requerimientos_sistema": {
+    "funcionales": [
+      "Visualización interactiva del brief del cliente y propósito.",
+      "Sección detallada con la introducción, descripción breve y reseña histórica de la receta.",
+      "Despliegue dinámico de información de ingredientes (nombre, cantidad, descripción).",
+      "Guía paso a paso interactiva para la preparación de la receta.",
+      "Manejo de fichas de usuario y perfiles de personas para personalización de la experiencia."
+    ],
+    "no_funcionales": [
+      "Diseño responsivo optimizado para dispositivos móviles y escritorio.",
+      "Tiempos de carga mínimos para asegurar una excelente experiencia de usuario.",
+      "Estructura accesible y fácil navegación del mapa del sitio."
+    ]
+  }
+}

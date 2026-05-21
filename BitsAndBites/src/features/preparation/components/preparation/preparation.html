@@ -1,0 +1,24 @@
+<section class="preparation-section">
+  @if (responsive.isDesktop()) {
+    <img class="leaf leaf-left leaf-left-top" src="assets/preparation1.png" alt="" />
+    <img class="leaf leaf-left leaf-left-middle" src="assets/preparation2.png" alt="" />
+    <img class="leaf leaf-left leaf-left-bottom" src="assets/leaf2.png" alt="" />
+    <img class="leaf leaf-right leaf-right-top" src="assets/preparation1.png" alt="" />
+    <img class="leaf leaf-right leaf-right-middle" src="assets/preparation2.png" alt="" />
+    <img class="leaf leaf-right leaf-right-bottom" src="assets/leaf2.png" alt="" />
+  }
+
+  <h2 class="titles">Preparation</h2>
+
+  <div class="timeline">
+    @for (step of steps; track step.title; let index = $index) {
+      <article class="step" [class.step-left]="index % 2 === 0" [class.step-right]="index % 2 !== 0">
+        <span class="step-dot" aria-hidden="true"></span>
+        <div class="step-copy">
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.text }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>

@@ -41,9 +41,42 @@ body {
 }
 
 .separator {
-    margin-top: 25px;
+    margin: 12px auto;
     width: 95%;
     border: none;
     height: 2px;
     background-color: var(--bright-primary-color);
+}
+
+.section-anchor {
+    scroll-margin-top: var(--navbar-height);
+}
+
+.compact-separator {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.titles {
+    font-family: var(--h1);
+    color: var(--primary-color);
+    font-size: clamp(1.8rem, 3vw, 4rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin: 0;
+}
+
+.section-subtitle {
+    font-family: var(--fimga-p);
+    color: var(--bright-primary-color);
+    font-size: clamp(1.15rem, 1.8vw, 1.8rem);
+    line-height: 1.25;
+    margin: 0;
+}
+
+.section-text {
+    font-family: var(--fimga-p);
+    color: var(--primary-color);
+    font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+    line-height: 1.5;
 }

@@ -1,52 +1,48 @@
-@if (responsive.isMobile()){
+@if (responsive.isMobile()) {
     <nav class="dark-background">
         <div>
             <h2 class="logo">Bits&Bites</h2>
         </div>
         <div></div>
         <div>
-            <button
-                (click)="toggleMenu()"
-                class="hamburger-menu"
-            >
+            <button (click)="toggleMenu()" class="hamburger-menu" type="button" aria-label="Open menu">
                 <mat-icon>{{ isMenuOpen() ? 'close' : 'menu' }}</mat-icon>
             </button>
         </div>
         @if (isMenuOpen()) {
             <div class="mobile-menu">
                 <ul class="navbar-links-mobile">
-                    <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-                    <li><a routerLink="/description" routerLinkActive="active">Description</a></li>
-                    <li><a routerLink="/ingredients" routerLinkActive="active">Ingredients</a></li>
-                    <li><a routerLink="/recipe" routerLinkActive="active">Recipe</a></li>
-                    <li><a routerLink="/comments" routerLinkActive="active">Comments</a></li>  
-                    <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-                    <li><a routerLink="/join" routerLinkActive="active">Join Us</a></li>
+                    <li><button type="button" (click)="scrollToSection('home')">Home</button></li>
+                    <li><button type="button" (click)="scrollToSection('recipe')">Recipe</button></li>
+                    <li><button type="button" (click)="scrollToSection('ingredients')">Ingredients</button></li>
+                    <li><button type="button" (click)="scrollToSection('preparation')">Preparation</button></li>
+                    <li><button type="button" (click)="scrollToSection('community')">Community</button></li>
+                    <li><button type="button" (click)="scrollToSection('contact')">Contact</button></li>
+                    <li><button type="button" (click)="scrollToSection('community')">Join Us</button></li>
                 </ul>
             </div>
         }
     </nav>
-
 } @else {
     <nav class="dark-background">
         <div>
-            <h1 class="logo">Bits&Bites</h1>
+            <button class="logo-button" type="button" (click)="scrollToSection('home')">
+                <h1 class="logo">Bits&Bites</h1>
+            </button>
         </div>
         <div>
             <ul class="navbar-links-desktop">
-                <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-                <li><a routerLink="/recipe" routerLinkActive="active">Recipe</a></li>
-                <li><a routerLink="/preparation" routerLinkActive="active">Preparation</a></li>
-                <li><a routerLink="/community" routerLinkActive="active">Community</a></li>
-                <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+                <li><button type="button" (click)="scrollToSection('home')">Home</button></li>
+                <li><button type="button" (click)="scrollToSection('recipe')">Recipe</button></li>
+                <li><button type="button" (click)="scrollToSection('preparation')">Preparation</button></li>
+                <li><button type="button" (click)="scrollToSection('community')">Community</button></li>
+                <li><button type="button" (click)="scrollToSection('contact')">Contact</button></li>
             </ul>
         </div>
         <div>
-            <a routerLink="/join">
-                <p class="join-us">
-                    Join Us
-                </p>
-            </a>
+            <button class="join-us" type="button" (click)="scrollToSection('community')">
+                Join Us
+            </button>
         </div>
     </nav>
 }

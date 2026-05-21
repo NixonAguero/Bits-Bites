@@ -1,10 +1,20 @@
 <div class="layout">
     <app-navbar></app-navbar>
     <main class="scroll-container">
-        <app-hero></app-hero>
+        <app-hero id="home"></app-hero>
+        <hr id="recipe" class="separator section-anchor">
+        <app-description></app-description>
+        <hr id="preparation" class="separator section-anchor">
+        <app-ingredients-carousel></app-ingredients-carousel>
+        <app-preparation></app-preparation>
+        <hr id="community" class="separator section-anchor">
+        <app-interaction-section></app-interaction-section>
+        <hr id="contact" class="separator section-anchor">
+        <app-contact-section></app-contact-section>
         <hr class="separator">
-        <section class="snap-section">B</section>
-        <section class="snap-section dark-background">C</section>
+        <app-site-footer></app-site-footer>
+
+        <app-ai-chat></app-ai-chat>
         <router-outlet />
     </main>
 </div>

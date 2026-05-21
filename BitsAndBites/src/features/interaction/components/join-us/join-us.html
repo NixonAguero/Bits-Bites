@@ -1,0 +1,96 @@
+<section class="join-us" aria-label="Join us form">
+  <h2 class="join-title">Join us</h2>
+
+  <form class="join-form" (ngSubmit)="submit()">
+    <label class="field">
+      <span>Email</span>
+      <input type="email" name="email" [(ngModel)]="email" required />
+    </label>
+
+    <label class="field">
+      <span>Password</span>
+      <input type="password" name="password" [(ngModel)]="password" required />
+    </label>
+
+    <fieldset class="interests">
+      <legend>What are your interests?</legend>
+
+      <div class="interest-options">
+        @for (interest of interests; track interest) {
+          <button
+            class="interest"
+            type="button"
+            [class.selected]="selectedInterests().includes(interest)"
+            (click)="toggleInterest(interest)"
+          >
+            <span class="check"></span>
+            {{ interest }}
+          </button>
+        }
+      </div>
+    </fieldset>
+
+    <label class="terms-check">
+      <input type="checkbox" name="acceptedTerms" [(ngModel)]="acceptedTerms" required />
+      <span>
+        I agree to the data handling and security policies.
+        <button class="terms-link" type="button" (click)="openTerms()">Read full terms</button>
+      </span>
+    </label>
+
+    <button class="submit-button" type="submit" [disabled]="isSending() || !acceptedTerms">
+      <span>{{ isSending() ? 'Sending' : 'Send' }}</span>
+      <mat-icon>send</mat-icon>
+    </button>
+
+    @if (status()) {
+      <p class="status">{{ status() }}</p>
+    }
+  </form>
+
+  @if (isTermsOpen()) {
+    <div class="terms-backdrop" role="presentation" (click)="closeTerms()">
+      <section
+        class="terms-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="terms-title"
+        (click)="$event.stopPropagation()"
+      >
+        <header>
+          <h3 id="terms-title">Data Security and Privacy Terms</h3>
+          <button type="button" (click)="closeTerms()" aria-label="Close terms">×</button>
+        </header>
+
+        <div class="terms-content">
+          <p>
+            By joining Bits and Bites, you consent to the collection of the information submitted
+            through this form, including your email, selected interests, and account access data.
+          </p>
+          <p>
+            Your information will be used only to manage community participation, personalize
+            content, improve the user experience, and communicate updates related to the project.
+          </p>
+          <p>
+            We do not sell personal data. Access to submitted information is limited to authorized
+            project administrators and will be handled with reasonable technical and organizational
+            safeguards.
+          </p>
+          <p>
+            Users are responsible for submitting accurate information and avoiding sensitive data
+            that is not required by this form. You may request correction or removal of your data
+            through the contact channels provided by the project.
+          </p>
+          <p>
+            By accepting these terms, you confirm that you understand how your data will be handled
+            and agree to participate under these security and privacy conditions.
+          </p>
+        </div>
+
+        <footer>
+          <button type="button" (click)="acceptedTerms = true; closeTerms()">Accept terms</button>
+        </footer>
+      </section>
+    </div>
+  }
+</section>

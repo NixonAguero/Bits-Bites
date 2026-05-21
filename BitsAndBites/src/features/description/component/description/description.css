@@ -1,0 +1,138 @@
+
+.description-container-desktop {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    padding: 30px 50px 30px 10px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.description-left-desktop {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.description-left-desktop .product-image {
+    width: 80%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(0.85);
+}
+
+.description-right-desktop {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    padding-right: 10%;
+    opacity: 0;
+    transform: translateX(80px);
+}
+
+.description-container-movile {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 16px;
+    padding-bottom: 28px;
+    justify-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(80px);
+}
+
+.product-image {
+    width: clamp(200px, 30vw, 400px);
+    height: auto;
+    border-radius: 10px;
+}
+
+.hr-subtitulo {
+    width: 40%;
+    border: 1px solid var(--bright-primary-color);
+    margin-top: -10px;
+}
+.description-right-desktop .hr-subtitulo {
+    margin-left: 0; 
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    margin-bottom: 15px;
+}
+
+.description-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;   
+}
+
+.leaf-decoration {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: clamp(120px, 15vw, 220px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+:host(.visible) .leaf-decoration {
+    animation: leafFromLeft 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+:host(.visible) .description-left-desktop .product-image {
+    animation: productAppear 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
+}
+
+:host(.visible) .description-right-desktop {
+    animation: textFromRight 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+}
+
+:host(.visible) .description-container-movile {
+    animation: textFromRight 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ── KEYFRAMES ── */
+@keyframes leafFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes productAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes textFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

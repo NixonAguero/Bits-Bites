@@ -109,7 +109,7 @@
 
 .leaf-top-left {
     position: absolute;
-    top: -120px;
+    top: 0px;
     left: -20px;
     width: clamp(10vw, 12vw, 15vw);
     pointer-events: none;

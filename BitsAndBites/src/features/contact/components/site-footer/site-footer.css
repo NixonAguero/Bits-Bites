@@ -1,0 +1,53 @@
+:host {
+  display: block;
+}
+
+.site-footer {
+  min-height: 214px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 30px 54px;
+  box-sizing: border-box;
+}
+
+.footer-brand h2 {
+  font-family: var(--logo);
+  font-size: clamp(2rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  margin: 0 0 8px;
+}
+
+.footer-brand p,
+.footer-copy {
+  font-family: var(--fimga-p);
+  margin: 0;
+}
+
+.footer-brand p {
+  font-size: 1.25rem;
+}
+
+.footer-copy {
+  max-width: 620px;
+  justify-self: center;
+  text-align: center;
+  line-height: 1.45;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .footer-copy {
+    font-size: 0.9rem;
+  }
+}

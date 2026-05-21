@@ -5,24 +5,43 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
+const dataFolder = join(process.cwd(), 'data');
+const joinUsFile = join(dataFolder, 'join-us.json');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+app.use(express.json());
 
-/**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/{*splat}', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
+app.post('/api/join-us', (req, res) => {
+  const { email, password, interests } = req.body ?? {};
+
+  if (!email || !password || !Array.isArray(interests)) {
+    res.status(400).json({ message: 'Invalid join us data' });
+    return;
+  }
+
+  if (!existsSync(dataFolder)) {
+    mkdirSync(dataFolder, { recursive: true });
+  }
+
+  const currentData = existsSync(joinUsFile)
+    ? JSON.parse(readFileSync(joinUsFile, 'utf-8'))
+    : [];
+
+  currentData.push({
+    email,
+    password,
+    interests,
+    createdAt: new Date().toISOString(),
+  });
+
+  writeFileSync(joinUsFile, JSON.stringify(currentData, null, 2));
+  res.status(201).json({ message: 'Join us data saved' });
+});
 
 /**
  * Serve static files from /browser

@@ -16,4 +16,15 @@ export class Navbar {
   protected toggleMenu = (): void => {
     this.isMenuOpen.set(!this.isMenuOpen());
   }
+
+  protected scrollToSection(sectionId: string): void {
+    const section = document.getElementById(sectionId);
+
+    if (!section) {
+      return;
+    }
+
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    this.isMenuOpen.set(false);
+  }
 }

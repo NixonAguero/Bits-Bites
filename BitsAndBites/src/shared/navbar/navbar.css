@@ -53,41 +53,46 @@ nav > div:nth-child(3) {
 }
 
 /* --- ESTILOS BASE DE ENLACES --- */
-.navbar-links-desktop a,
-.navbar-links-mobile a {
+.navbar-links-desktop button,
+.navbar-links-mobile button {
+    background: transparent;
+    border: 0;
     color: var(--secondary-color);
-    text-decoration: none;
+    cursor: pointer;
     font-size: 18px;
     font-family: var(--h3);
     position: relative;
     transition: color 0.25s ease, opacity 0.25s ease;
 }
 
-.navbar-links-mobile a {
+.navbar-links-mobile button {
     font-size: 22px;
 }
 
-a {
-    text-decoration: none;
+.logo-button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
 }
 
 /* --- HOVER (Corregido aumentando la especificidad) --- */
-.navbar-links-desktop a:hover,
-.navbar-links-mobile a:hover {
+.navbar-links-desktop button:hover,
+.navbar-links-mobile button:hover {
     opacity: 0.8;
     color: var(--extra2) !important; /* El !important asegura romper la herencia base */
 }
 
 /* --- ACTIVE (Corregido aumentando la especificidad) --- */
-.navbar-links-desktop a.active,
-.navbar-links-mobile a.active {
+.navbar-links-desktop button:active,
+.navbar-links-mobile button:active {
     font-weight: bold; 
     opacity: 1;      
     color: var(--bright-primary-color) !important;  
 }
 
 /* Línea decorativa opcional para el elemento activo en desktop */
-.navbar-links-desktop a.active::after {
+.navbar-links-desktop button:active::after {
     content: '';
     position: absolute;
     left: 0;
@@ -106,6 +111,8 @@ a {
     border-radius: 15px;
     cursor: pointer;
     margin-right: 20px;
+    font-family: var(--fimga-p);
+    font-size: 1rem;
     transition: transform 0.2s ease, filter 0.2s ease;
 }
 

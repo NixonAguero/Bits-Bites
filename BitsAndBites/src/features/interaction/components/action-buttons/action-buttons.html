@@ -1,0 +1,12 @@
+<div class="actions">
+  <button class="action-button" type="button" (click)="addLike()" [attr.aria-label]="likeText()">
+    <span>Like</span>
+    <strong>{{ likes() }}</strong>
+    <span aria-hidden="true">❤</span>
+  </button>
+
+  <button class="action-button" type="button" (click)="shareRecipe()">
+    <span>{{ shareLabel() }}</span>
+    <mat-icon>mobile_screen_share</mat-icon>
+  </button>
+</div>

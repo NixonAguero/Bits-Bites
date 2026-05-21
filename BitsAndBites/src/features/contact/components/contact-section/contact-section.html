@@ -1,0 +1,21 @@
+<section class="contact-section">
+  <h2 class="titles">Contact</h2>
+
+  <div class="contact-cards">
+    @for (contact of contacts; track contact.name) {
+      <article class="contact-card">
+        <img class="contact-image" [src]="contact.image" [alt]="contact.name" />
+        <h3>{{ contact.name }}</h3>
+
+        <div class="contact-links">
+          <a [href]="contact.instagram" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <img src="assets/instagramIcon.png" alt="" />
+          </a>
+          <a [href]="contact.whatsapp" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+            <img src="assets/WhatasppIcon.png" alt="" />
+          </a>
+        </div>
+      </article>
+    }
+  </div>
+</section>

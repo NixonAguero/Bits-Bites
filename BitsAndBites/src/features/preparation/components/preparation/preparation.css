@@ -1,0 +1,251 @@
+:host {
+  display: block;
+  scroll-snap-align: start;
+}
+
+.preparation-section {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 24px;
+  box-sizing: border-box;
+}
+
+.preparation-section .titles {
+  margin-bottom: 10px;
+}
+
+.timeline {
+  position: relative;
+  width: min(100%, 1000px);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    bottom: 17px;
+    left: 50%;
+    width: 4px;
+    background-color: var(--bright-primary-color);
+    transform: translateX(-50%);
+}
+
+.step {
+  position: relative;
+  min-height: 72px;
+  display: grid;
+  grid-template-columns: 1fr 70px 1fr;
+  align-items: start;
+}
+
+.step-dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--bright-primary-color);
+  grid-column: 2;
+  justify-self: center;
+  margin-top: 4px;
+  /* ← empuja el dot a la altura del h3 */
+  z-index: 1;
+  align-self: start;
+  /* ← explícito para desktop */
+}
+
+.step-copy {
+  color: var(--primary-color);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.step-left .step-copy {
+  grid-column: 1;
+  text-align: right;
+  transform: translateX(-80px);
+}
+
+.step-right .step-copy {
+  grid-column: 3;
+  text-align: left;
+  transform: translateX(80px);
+}
+
+.step-copy h3 {
+  font-family: var(--h1);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0 0 8px;
+}
+
+.step-copy p {
+  font-family: var(--fimga-p);
+  font-size: 1.2rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.leaf {
+  position: absolute;
+  width: clamp(88px, 13vw, 145px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.leaf-left {
+  left: -12px;
+  translate: -130% 0;
+}
+
+.leaf-right {
+  right: -12px;
+  scale: -1 1;
+  translate: 130% 0;
+}
+
+.leaf-left-top {
+  top: 44px;
+}
+
+.leaf-left-middle {
+  top: 270px;
+  left: -22px;
+}
+
+.leaf-left-bottom {
+  bottom: 42px;
+  rotate: 52deg;
+  left: -32px;
+}
+
+.leaf-right-top {
+  top: 40px;
+  rotate: 0deg;
+  scale: -1;
+}
+
+.leaf-right-middle {
+  top: 260px;
+  scale: -1;
+}
+
+.leaf-right-bottom {
+  bottom: 48px;
+  rotate: -58deg;
+  right: -62px;
+  scale: -1;
+}
+
+:host(.visible) .step-left .step-copy,
+:host(.visible) .step-right .step-copy {
+  animation: stepIn 0.8s ease forwards;
+  visibility: visible;
+}
+
+:host(.visible) .step:nth-child(2) .step-copy {
+  animation-delay: 0.08s;
+}
+
+:host(.visible) .step:nth-child(3) .step-copy {
+  animation-delay: 0.16s;
+}
+
+:host(.visible) .step:nth-child(4) .step-copy {
+  animation-delay: 0.24s;
+}
+
+:host(.visible) .step:nth-child(5) .step-copy {
+  animation-delay: 0.32s;
+}
+
+:host(.visible) .step:nth-child(6) .step-copy {
+  animation-delay: 0.4s;
+}
+
+:host(.visible) .step:nth-child(7) .step-copy {
+  animation-delay: 0.48s;
+}
+
+:host(.visible) .leaf-left,
+:host(.visible) .leaf-right {
+  animation: leafIn 0.9s ease forwards;
+}
+
+@keyframes stepIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes leafIn {
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    min-height: auto;
+  }
+
+  .preparation-section .titles {
+    display: block;
+    font-size: 1.65rem;
+    margin-bottom: 8px;
+    align-self: center;
+  }
+
+  .preparation-section .titles {
+    display: block; 
+    align-self: center;
+  }
+
+  .timeline {
+    width: 100%;
+    gap: 0;
+  }
+
+  .timeline::before {
+    left: 26px;
+    top: 24px;
+    bottom: 92px;
+    width: 4px;
+  }
+
+  .step {
+    min-height: 116px;
+    grid-template-columns: 52px 1fr;
+  }
+
+  .step-dot {
+    width: 48px;
+    height: 48px;
+    grid-column: 1;
+    margin-top: 0;
+  }
+
+  .step-left .step-copy,
+  .step-right .step-copy {
+    grid-column: 2;
+    text-align: left;
+    transform: translateX(80px);
+  }
+
+  .step-copy h3 {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+  }
+
+  .step-copy p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}

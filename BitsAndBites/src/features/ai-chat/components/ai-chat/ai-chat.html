@@ -1,0 +1,40 @@
+<section class="ai-chat" [class.open]="isOpen()" aria-label="AI chat assistant">
+  @if (isOpen()) {
+    <div class="chat-panel">
+      <header class="chat-header">
+        <div>
+          <h2>AI Assistant</h2>
+          <p>{{ statusText() }}</p>
+        </div>
+        <button type="button" (click)="toggleChat()" aria-label="Close chat">×</button>
+      </header>
+
+      <div class="chat-messages">
+        @for (message of messages(); track message.role + message.text + $index) {
+          <article class="message" [class.user-message]="message.role === 'user'">
+            {{ message.text }}
+          </article>
+        }
+
+        @if (isThinking()) {
+          <article class="message thinking">Thinking...</article>
+        }
+      </div>
+
+      <form class="chat-form" (ngSubmit)="sendMessage()">
+        <input
+          type="text"
+          name="chatMessage"
+          [(ngModel)]="draft"
+          placeholder="Ask about the recipe"
+          autocomplete="off"
+        />
+        <button type="submit" [disabled]="isThinking()" aria-label="Send message">➤</button>
+      </form>
+    </div>
+  }
+
+  <button class="chat-toggle" type="button" (click)="toggleChat()" aria-label="Open AI chat">
+    AI Chat
+  </button>
+</section>
